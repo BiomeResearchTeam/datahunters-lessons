@@ -1,6 +1,6 @@
 # Basic config, that must be set correctly
-baseurl: /markdownslides
-githuburl: https://github.com/a-nau/markdownslides/
+baseurl: /datahunters-lessons
+githuburl: https://simone-fontana.github.io/datahunters-lessons/
 
 # Further config
 markdown_slide_separator: ---
