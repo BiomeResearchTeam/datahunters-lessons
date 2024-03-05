@@ -1,7 +1,3 @@
----
-type: slides
----
-
 # Let's manipulate the Dataframe: column extraction
 
 Eravamo rimasti alla nostra lista di colonne. Benissimo, e se volessimo selezionare una delle colonne del df per vederne il contenuto? Scegliamo per esempio la colonna `DOI` che contiene il link per il paper, che dovrai leggere per curare i metadati.
@@ -27,7 +23,7 @@ print(colonna_paper)
 Name: DOI, dtype: object
 ```
 
-Notes: Grazie alla `lista_colonne`, abbiamo potuto verificare la presenza della colonna DOI nel nostro DataFrame. Per selezionare questa colonna, dobbiamo abbandonare la `lista_colonne` e tornare a lavorare direttamente sul DataFrame (`df`). Per estrarre una colonna da un DataFrame, è sufficiente richiamare il DataFrame, nel nostro caso `df`, seguito da parentesi quadre (`[]`), all'interno delle quali dobbiamo indicare il nome della colonna desiderata tra virgolette, come ad esempio `["DOI"]`. Abbiamo utilizzato la funzione `print()` per visualizzare il contenuto della colonna. Dal momento che il nostro DataFrame è composto solo da 6 righe, vediamo ripetuto sei volte il dato `https://doi.org/10.1038/ismej.2012.8`.
+Grazie alla `lista_colonne`, abbiamo potuto verificare la presenza della colonna DOI nel nostro DataFrame. Per selezionare questa colonna, dobbiamo abbandonare la `lista_colonne` e tornare a lavorare direttamente sul DataFrame (`df`). Per estrarre una colonna da un DataFrame, è sufficiente richiamare il DataFrame, nel nostro caso `df`, seguito da parentesi quadre (`[]`), all'interno delle quali dobbiamo indicare il nome della colonna desiderata tra virgolette, come ad esempio `["DOI"]`. Abbiamo utilizzato la funzione `print()` per visualizzare il contenuto della colonna. Dal momento che il nostro DataFrame è composto solo da 6 righe, vediamo ripetuto sei volte il dato `https://doi.org/10.1038/ismej.2012.8`.
 
 ---
 
@@ -56,7 +52,7 @@ print(colonna_paper_unici)
 ['https://doi.org/10.1038/ismej.2012.8']
 ```
 
-Notes: Ed ecco un altro metodo molto importante: `.unique()`. Questo metodo permette di ottenere i valori unici contenuti in un insieme di dati, come ad esempio una colonna! Usando `colonna_paper_unici = df["DOI"].unique()` potrai recuperare il link da cliccare per leggere il paper relativo a questo progetto!
+Ed ecco un altro metodo molto importante: `.unique()`. Questo metodo permette di ottenere i valori unici contenuti in un insieme di dati, come ad esempio una colonna! Usando `colonna_paper_unici = df["DOI"].unique()` potrai recuperare il link da cliccare per leggere il paper relativo a questo progetto!
 
 ---
 

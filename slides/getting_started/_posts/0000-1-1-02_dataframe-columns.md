@@ -1,7 +1,3 @@
----
-type: slides
----
-
 # Let's start manipulating the Dataframe!
 
 Riprendiamo da dove eravamo rimasti:
@@ -61,7 +57,7 @@ print(df)
 [6 rows x 193 columns]
 ```
 
-Notes: Ora che hai creato un DataFrame chiamato df, hai la possibilità di richiamarlo quante volte desideri. Tuttavia, quando il DataFrame contiene molte colonne o righe, potrebbe essere complicato esplorarne il contenuto tramite una semplice stampa. Nel nostro caso, con un numero elevato di colonne, vengono mostrate tutt le righe perché il nostro df ha effettivamente solo 6 righe, e solo alcune delle molte colonne del df per rendere più gestibile la visualizzazione.
+Ora che hai creato un DataFrame chiamato df, hai la possibilità di richiamarlo quante volte desideri. Tuttavia, quando il DataFrame contiene molte colonne o righe, potrebbe essere complicato esplorarne il contenuto tramite una semplice stampa. Nel nostro caso, con un numero elevato di colonne, vengono mostrate tutt le righe perché il nostro df ha effettivamente solo 6 righe, e solo alcune delle molte colonne del df per rendere più gestibile la visualizzazione.
 
 Nella stampa del DataFrame, puoi notare una barra inversa `\` che indica che le righe stanno continuando a capo nella visualizzazione del print, ma nella realtà dei dati non ci sono interruzioni. Inoltre, puoi vedere dei puntini di sospensione `...`, che indicano che molte colonne sono omesse dalla visualizzazione.
 
@@ -75,7 +71,7 @@ Iniziamo a indagare questo DataFrame. Per esempio, una prima domanda che possiam
 colonne = df.columns
 ```
 
-Notes: Per rispondere possiamo usare un metodo già predefinito in Python: `.columns`. Digitando il nome del DataFrame seguito da .columns() otteniamo il nome di tutte le colonne presenti nel DataFrame. Per usare questa informazione è utile creare una variabile, nell'esempio a sinistra abbiamo usato `colonne`, che contenga questa informazione, in modo da utilizzarla in seguito. 
+Per rispondere possiamo usare un metodo già predefinito in Python: `.columns`. Digitando il nome del DataFrame seguito da .columns() otteniamo il nome di tutte le colonne presenti nel DataFrame. Per usare questa informazione è utile creare una variabile, nell'esempio a sinistra abbiamo usato `colonne`, che contenga questa informazione, in modo da utilizzarla in seguito. 
 
 ---
 
@@ -100,7 +96,7 @@ Index(['study_accession', 'secondary_study_accession', 'sample_accession',
       dtype='object', length=193)
 ```
 
-Notes: Visualizziamo le nostre colonne! Per farlo, usiamo la funzione che conosciamo già: `print()`. Come vedi, essendo 193 colonne `(length = 193)`, in questo modo non riusciamo a vedere tutti nomi delle colonne, ma come al solito troviamo i puntini di sospensione `...` che ci indicano che il nome di molte colonne è omesso dalla stampa... Ci servirebbe un modo per stampare tutti i nomi delle colonne...
+Visualizziamo le nostre colonne! Per farlo, usiamo la funzione che conosciamo già: `print()`. Come vedi, essendo 193 colonne `(length = 193)`, in questo modo non riusciamo a vedere tutti nomi delle colonne, ma come al solito troviamo i puntini di sospensione `...` che ci indicano che il nome di molte colonne è omesso dalla stampa... Ci servirebbe un modo per stampare tutti i nomi delle colonne...
 
 ---
 
@@ -117,7 +113,7 @@ print(lista_colonne)
 ['study_accession', 'secondary_study_accession', 'sample_accession', 'secondary_sample_accession', 'experiment_accession', 'run_accession', 'submission_accession', 'tax_id', 'scientific_name_exp', 'instrument_platform', 'instrument_model_x', 'library_name_x', 'library_layout_x', 'library_strategy_x', 'library_source_x', 'library_selection_x', 'read_count', 'base_count', 'center_name_exp', 'first_public', 'last_updated', 'experiment_title_x', 'study_title_x', 'study_alias_x', 'experiment_alias_x', 'run_alias_x', 'fastq_bytes', 'fastq_md5', 'fastq_ftp', 'fastq_aspera', 'fastq_galaxy', 'sra_bytes', 'sra_md5', 'sra_ftp', 'sra_aspera', 'sra_galaxy', 'sample_alias_x', 'sample_title_x', 'first_created', 'center_name_sam', 'PRIMARY_ID', 'EXTERNAL_ID', 'SUBMITTER_ID', 'TITLE', 'TAXON_ID', 'SCIENTIFIC_NAME', 'ENA-FASTQ-FILES', 'ENA-SUBMITTED-FILES', 'organism', 'ENA-FIRST-PUBLIC_x', 'ENA-LAST-UPDATE_x', 'DESCRIPTION', 'submitted_bytes', 'submitted_md5', 'submitted_ftp', 'submitted_aspera', 'submitted_galaxy', 'submitted_format', 'ENA-CHECKLIST', 'host scientific name_x', 'latitude_x', 'physical_specimen_location_x', 'collection_timestamp_x', 'env_material_x', 'longitude_x', 'elevation_x', 'dna_extracted_x', 'physical_specimen_remaining_x', 'host subject id_x', 'sample type_x', 'DOI_left', 'body product_x', 'env biome_x', 'env feature_x', 'host taxid_x', 'body site_x', 'host common name', 'body habitat_x', 'public_x', 'anonymized name_x', 'env package_x', 'sample location', 'updated_date', 'spots.x', 'bases.x', 'experiment_ID', 'experiment', 'sample_ID_y', 'sample', 'study_ID', 'study', 'submission_ID', 'submission', 'sradb_updated', 'ReleaseDate', 'LoadDate', 'spots.y', 'bases.y', 'spots_with_mates', 'avgLength', 'size_MB', 'download_path', 'Experiment', 'LibraryName', 'LibraryStrategy', 'LibrarySelection', 'LibrarySource', 'LibraryLayout', 'InsertSize', 'InsertDev', 'Platform', 'Model', 'SRAStudy', 'BioProject', 'ProjectID', 'Sample', 'BioSample', 'SampleType_y', 'TaxID', 'ScientificName', 'SampleName', 'Tumor', 'CenterName', 'Submission', 'Consent', 'RunHash', 'ReadHash', 'Year_of_release', 'DOI', 'run_alias_y', 'experiment_alias_y', 'experiment_title_y', 'library_name_y', 'library_strategy_y', 'library_source_y', 'library_selection_y', 'library_layout_y', 'library_construction_protocol', 'platform', 'instrument_model_y', 'platform_parameters', 'sample_alias_y', 'taxon_id', 'description', 'study_alias_y', 'study_title_y', 'study_type', 'study_abstract', 'center_project_name_y', 'submission_lab', 'env_biome_y', 'env_feature_y', 'env_material_y', 'run_attribute', 'ENA-FIRST-PUBLIC_y', 'ENA-LAST-UPDATE_y', 'host_subject_id_y', 'design_description', 'env_package_y', 'Body_Site_y', 'body_site_y', 'run_date', 'run_center', 'anonymized_name', 'pcr_primers', 'sequencing_meth', 'target_gene', 'target_subfragment', 'body_habitat', 'body_product', 'elevation_y', 'host_common_name_y', 'host_taxid_y', 'latitude_y', 'longitude_y', 'title', 'experiment_center', 'samp_size_y', 'sample_center', 'illumina_technology_y', 'sample_type_y', 'public_y', 'host scientific name_y', 'barcode_y', 'center_name', 'linker', 'primer', 'run_prefix', 'collection_timestamp_y', 'dna_extracted_y', 'physical_specimen_location_y', 'physical_specimen_remaining_y', 'sample_location']
 ```
 
-Notes: Guarda: abbiamo trasformato la nostra variabile `colonne` in una lista usando il metodo `to_list()`, e abbiamo immagazzinato il risultato di questo passaggio in una nuova variabile `lista_colonne`. Visualizzando `lista_colonne` abbiamo come output la lista di tutte e 193 le colonne! 
+Guarda: abbiamo trasformato la nostra variabile `colonne` in una lista usando il metodo `to_list()`, e abbiamo immagazzinato il risultato di questo passaggio in una nuova variabile `lista_colonne`. Visualizzando `lista_colonne` abbiamo come output la lista di tutte e 193 le colonne! 
 
 ---
 

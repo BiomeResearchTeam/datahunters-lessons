@@ -1,7 +1,3 @@
----
-type: slides
----
-
 # Let's manipulate the Dataframe: COLONNE NON SEMPRE PRESENTI
 
 Quindi ritorniamo a dove eravamo rimasti nella cura del nostro progetto ERP020892.
@@ -43,7 +39,7 @@ Non è stata trovata nessuna colonna che contenesse l'informazione del body_site
 df["SKIOME_body_site"] = "hands"
 ```
 
-Notes: Ecco la parte più complicata del workshop: verificare che le 7 colonne siano presenti nei metadati, ed eventualmente se l'informazione che contengono sia giusta. Ti faccio notare che in questa slide hai scoperto l'ultima fondamentale per il workshop: `len()`. `len()` è una funzione built-in, che restituisce la lunghezza di un oggetto, come nel nostro caso una lista. 
+Ecco la parte più complicata del workshop: verificare che le 7 colonne siano presenti nei metadati, ed eventualmente se l'informazione che contengono sia giusta. Ti faccio notare che in questa slide hai scoperto l'ultima fondamentale per il workshop: `len()`. `len()` è una funzione built-in, che restituisce la lunghezza di un oggetto, come nel nostro caso una lista. 
 
 Cosa abbiamo fatto in questa slide? Abbiamo controllato se la lista `colonne_trovate` contenesse almeno un elemento, cioè almeno il nome di una colonna. Se la lista ha una lunghezza maggiore di 0, allora per ogni `colonna` presente in `colonne_trovate` avrebbe stampato il nome della `colonna` e i valori unici contenuti in quella `colonna`. Avremmo quindi potuto così determinare se esistesse una colonna specifica per il "body_site". (Ah, ti ricordo che se esiste una colonna specifica per il "body_site" e il valore contenuto è corretto, non devi intervenire; altrimenti, se il valore è scorretto, devi creare una nuova colonna con il contenuto corretto). Se invece, come nel nostro caso, la lista `colonne_trovate` è vuota, allora viene eseguito il comando dopo `else:`: stampa la frase "nessuna colonna trovata!". A questo punto non ti resta che creare una nuova colonna contenente quell'informazione.
 
@@ -84,7 +80,7 @@ Non è stata trovata nessuna colonna specifica che contenesse l'informazione del
 df["SKIOME_target_region"] = "V3-V4"
 ```
 
-Notes: In questo caso abbiamo cercato se esistesse un'altra delle 7 colonne: target_region. Quindi abbiamo creato la lista `colonne_trovate` che contiene il nome delle colonne in cui il valore "V3-V4" è stato trovato. Quando abbiamo eseguito il comando `if len(colonne_trovate)>0`, la condizione era vera e quindi è stato eseguito il comando:
+In questo caso abbiamo cercato se esistesse un'altra delle 7 colonne: target_region. Quindi abbiamo creato la lista `colonne_trovate` che contiene il nome delle colonne in cui il valore "V3-V4" è stato trovato. Quando abbiamo eseguito il comando `if len(colonne_trovate)>0`, la condizione era vera e quindi è stato eseguito il comando:
 `for colonna in colonne_trovate:
     print(colonna, df[colonna].unique())`
 

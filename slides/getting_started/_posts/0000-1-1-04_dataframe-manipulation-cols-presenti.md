@@ -1,7 +1,3 @@
----
-type: slides
----
-
 # Let's manipulate the Dataframe: column extraction & check info
 
 OK, passiamo al cuore dell'attività del workshop: avete trovato le informazioni nel paper e ora volete curare i metadati di quel progetto. Le colonne che dovrete curare per ogni progetto sono 9:
@@ -16,7 +12,7 @@ OK, passiamo al cuore dell'attività del workshop: avete trovato le informazioni
 * "SKIOME_body_site": sito del corpo campionato (hands, forehead, ...)
 * "SKIOME_status": condizione o stato che si attribuisce ai soggetti campionati in base alle diverse ipotesi considerate (healthy vs disease, rural vs urban, ...)
 
-Notes: Le prime 3 colonne ("library_strategy", "instrument_platform", "instrument_model") sono **sempre** presenti nei metadati che andrete a curare, mentre le altre 7 potrebbero essere presenti o meno. Di conseguenza, ci sono due strade che dovrete percorrere:
+Le prime 3 colonne ("library_strategy", "instrument_platform", "instrument_model") sono **sempre** presenti nei metadati che andrete a curare, mentre le altre 7 potrebbero essere presenti o meno. Di conseguenza, ci sono due strade che dovrete percorrere:
 
 * Per le **COLONNE SEMPRE PRESENTI** ("library_strategy", "instrument_platform", "instrument_model") dovrete verificare che i valori contenuti in queste colonne coincidano con quelli trovati nel paper. Se corrispono, ottimo! non dovete fare nulla e potete passare alla prossima colonna. Se, invece, i valori nelle colonne sono diversi da quelli che avete trovato nel paper allora dovete modificarli.
 
@@ -39,7 +35,7 @@ print(strategia)
 ['AMPLICON']
 ```
 
-Notes: Per verificare che il valore presente nella colonna da curare sempre presente sia lo stesso trovato nel paper, basta sfruttare quello che hai imparato finora! Quindi abbiamo estratto il valore unico dalla colonna `library_strategy` e l'abbiamo stampato. TA-DAAN: `AMPLICON`. Il valore trovato è corrisponde con quello che abbiamo letto nel paper e quindi possiamo procedere con un'altra colonna.
+Per verificare che il valore presente nella colonna da curare sempre presente sia lo stesso trovato nel paper, basta sfruttare quello che hai imparato finora! Quindi abbiamo estratto il valore unico dalla colonna `library_strategy` e l'abbiamo stampato. TA-DAAN: `AMPLICON`. Il valore trovato è corrisponde con quello che abbiamo letto nel paper e quindi possiamo procedere con un'altra colonna.
 
 ---
 
@@ -64,7 +60,7 @@ df["SKIOME_instrument_platform"] = "AMPLICON"
 ["AMPLICON"]
 ```
 
-Notes: Supponiamo che, durante la verifica di questa colonna, abbiamo riscontrato un valore diverso da quello dichiarato nel paper. Niente di più semplice: dobbiamo creare una nuova colonna contenente il valore corretto. Per fare ciò, dobbiamo specificare il nome del DataFrame (`df`) seguito dalle parentesi quadre (`[]`), all'interno delle quali indichiamo il nome della nuova colonna. Quando crei una nuova colonna, segui il nome suggerito nella lista iniziale delle colonne da curare. Nota che, se stai curando quella particolare colonna, devi aggiungere come prefisso "SKIOME_". Questo aiuterà chi utilizzerà la raccolta a capire che la colonna è stata curata!
+Supponiamo che, durante la verifica di questa colonna, abbiamo riscontrato un valore diverso da quello dichiarato nel paper. Niente di più semplice: dobbiamo creare una nuova colonna contenente il valore corretto. Per fare ciò, dobbiamo specificare il nome del DataFrame (`df`) seguito dalle parentesi quadre (`[]`), all'interno delle quali indichiamo il nome della nuova colonna. Quando crei una nuova colonna, segui il nome suggerito nella lista iniziale delle colonne da curare. Nota che, se stai curando quella particolare colonna, devi aggiungere come prefisso "SKIOME_". Questo aiuterà chi utilizzerà la raccolta a capire che la colonna è stata curata!
 
 
 # Let's manipulate the Dataframe: COLONNE SEMPRE PRESENTI
@@ -132,7 +128,7 @@ df["SKIOME_instrument_model"] = "Illumina HiSeq 2000"
 ['Illumina HiSeq 2000']
 ```
 
-Notes: Oh-oh! Hai tentato di estrarre il valore dalla colonna `instrument_model` e hai ottenuto una serie di errori. Non preoccuparti, l'errore è dovuto al fatto che questa colonna è assente nei metadati. Nessun problema se la colonna non esiste: puoi crearla! Hai già le competenze necessarie per farlo.
+Oh-oh! Hai tentato di estrarre il valore dalla colonna `instrument_model` e hai ottenuto una serie di errori. Non preoccuparti, l'errore è dovuto al fatto che questa colonna è assente nei metadati. Nessun problema se la colonna non esiste: puoi crearla! Hai già le competenze necessarie per farlo.
 
 ---
 
